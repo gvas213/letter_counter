@@ -1,3 +1,5 @@
+
+
 # import random
 
 # #words
@@ -40,16 +42,27 @@
 # print(guess_word)
 
 
-word = list("gaby")
+comp_word = tuple("gaby")
+word = list(comp_word)
 
-for 
+for x in range(len(word)):
+    word[x] = "-"
 
-word[0] = "-"
+
+
 print(word)
+print(comp_word)
 
 
+user_guess = input("guess a letter: ")
 
+for x in range(len(comp_word)):
 
+    if user_guess == comp_word[x]:
+        word[x] = word[x].replace(word[x], user_guess)
+        print(word)
+    else:
+        print("that's wrong")
 
 
 #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
