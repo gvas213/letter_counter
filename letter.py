@@ -1,5 +1,3 @@
-
-
 import random
 
 #words
@@ -23,24 +21,32 @@ word = (word_bank[word]) #the actual word
 word_split = tuple(word)
 guess = list(word)
 
-#game
+
 for x in range(len(guess)):
     guess[x] = "-"
 
 user_guess = "".join(guess)
 counter = len(guess) +2
+
+#game
+print("Welcome to the game! Guess a letter or the whole word before your tries run out to win.")
+print(f"your hint is: {hint}")
     
 while user_guess != word and counter != 0 and counter > 0:
-    letter = input(f"{user_guess} Guess a letter to see if it's right! You have {counter} tries left. Your hint is: {hint}. ")
+    letter = input(f"Your word is: {user_guess} Guess a letter or word! You have {counter} tries left. ")
 
     while letter.isalpha() != True:
-        letter = input("Please enter a letter to guess: ")    
+        letter = input("Please enter a letter or word to guess: ")    
+    
+    letter = letter.lower()
    
     for x in range(len(guess)):
-        if word_split[x] == letter.lower():
-            guess[x] = letter.lower()
+        if word_split[x] == letter:
+            guess[x] = letter
             user_guess = "".join(guess)
             print("That's correct!")
+        elif letter == word:
+            user_guess = word
     counter = counter - 1
     
 #end of game
