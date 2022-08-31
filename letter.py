@@ -14,6 +14,8 @@ hint_bank = ["This word typically comes after a street name.", "something that i
 "type of surgery that involves moving organs", "a classic ballroom dance", "think Harry Potter", "it's on most jackets", "they eat peoples brains", 
 "What's your star sign?"]
 
+congrats = ["Congrats!", "You got it!", "Yay! You got it!", "Great Job!", "Awesome, you got it!"]
+
 #generate random word and hint
 word = random.choice(range(len(word_bank))) #index of the word
 hint = (hint_bank[word]) #hint
