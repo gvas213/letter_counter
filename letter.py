@@ -18,49 +18,53 @@ congrats = ["Congrats!", "You got it!", "Yay! You got it!", "Great Job!", "Aweso
 bad = ["try again", "lol wrong", "incorrect", "That's wrong", "try a different letter"]
 
 #generate random word and hint
-word = random.choice(range(len(word_bank))) #index of the word
-hint = (hint_bank[word]) #hint
-word = (word_bank[word]) #the actual word
-word_split = tuple(word)
-guess = list(word)
+def conversions():
+    word = random.choice(range(len(word_bank))) #index of the word
+    hint = (hint_bank[word]) #hint
+    word = (word_bank[word]) #the actual word
+    word_split = tuple(word)
+    guess = list(word)
 
-
-for x in range(len(guess)):
-    guess[x] = "-"
-
-user_guess = "".join(guess)
-counter = len(guess) +2
-
-#game
-print("Welcome to the game! Guess a letter or the whole word before your tries run out to win.")
-print(f"your hint is: {hint}")
-    
-while user_guess != word and counter != 0 and counter > 0:
-    letter = input(f"Your word is: {user_guess} Guess a letter or word! You have {counter} tries left. ")
-
-    while letter.isalpha() != True:
-        letter = input("Please enter a letter or word to guess: ")    
-    
-    letter = letter.lower()
-    x = random.choice([0, 5])
 
     for x in range(len(guess)):
-        if word_split[x] == letter:
-            guess[x] = letter
-            user_guess = "".join(guess)
-            print(congrats[x])
-        elif letter == word:
-            user_guess = word
-            
-    counter = counter - 1
-    
-#end of game
-if user_guess == word:
-    print("Congrats! you guessed the word.")
-else:
-    print(f"Sorry you ran out of attempts. The correct word was {word}.")
+        guess[x] = "-"
+
+    user_guess = "".join(guess)
+    counter = len(guess) +2
+
+#game
+def game():
+    print("Welcome to the game! Guess a letter or the whole word before your tries run out to win.")
+    print(f"your hint is: {hint}")
+        
+    while user_guess != word and counter != 0 and counter > 0:
+        letter = input(f"Your word is: {user_guess} Guess a letter or word! You have {counter} tries left. ")
+
+        while letter.isalpha() != True:
+            letter = input("Please enter a letter or word to guess: ")    
+        
+        letter = letter.lower()
+        x = random.choice([0, 5])
+
+        for x in range(len(guess)):
+            if word_split[x] == letter:
+                guess[x] = letter
+                user_guess = "".join(guess)
+                print(congrats[x])
+            elif letter == word:
+                user_guess = word
+                
+        counter = counter - 1
+        
+    #end of game
+    if user_guess == word:
+        print("Congrats! you guessed the word.")
+    else:
+        print(f"Sorry you ran out of attempts. The correct word was {word}.")
 
 
 
 #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
 
+conversions()
+game()
