@@ -69,3 +69,10 @@ def game():
 
 conversions()
 game()
+
+
+
+
+def test(x)
+    mt = x * 9 / 5 +32
+    return mt 
