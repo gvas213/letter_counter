@@ -72,6 +72,9 @@ game()
 
 
 
-def test(x)
+def test(x):
     mt = x * 9 / 5 +32
     return mt 
+
+
+# hACK hACK
