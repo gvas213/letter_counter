@@ -1,4 +1,5 @@
 import random
+from stringprep import map_table_b2
 
 #words
 word_bank = ["avenue", "axiom", "bagpipes", "banjo", "bikini", "blizzard", "cobwebs", "crypt", "espionage", "fluffy", 
